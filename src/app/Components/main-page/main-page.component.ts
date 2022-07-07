@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Result } from 'src/app/Models/Result';
+import { ApiService } from 'src/app/Service/api.service';
 
 @Component({
   selector: 'app-main-page',
@@ -19,7 +20,8 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private formbuilder:FormBuilder) {
+  constructor(private formbuilder:FormBuilder, 
+            private apiservice:ApiService) {
   }
 
   public VerifyErros(variable:string):string {
@@ -48,16 +50,23 @@ export class MainPageComponent implements OnInit {
 
     if(calcResult < 7){
       colorGrade = "#dc3545";
-      textMotivation = "É só uma fase ruim, logo vai piorar"
     } else 
     if(calcResult >= 7 && calcResult <= 7.9){
       colorGrade = "#ffc107";
-      textMotivation = "Parabens, não fez nada além de sua obrigação"
     }else{
       colorGrade = "#28a745";
-      textMotivation = "S U S P E I T O"
     }
 
-    this.Media = new Result(calcResult,textMotivation,colorGrade);
+    this.apiservice.GetQuote().subscribe(
+      Response => {
+        textMotivation =  Response.slip.advice;
+        console.log(Response.slip.advice)
+        this.Media = new Result(calcResult,textMotivation,colorGrade);
+      },
+      Error => {
+        textMotivation = "Sem frases hoje, volte amanhã";
+        this.Media = new Result(calcResult,textMotivation,colorGrade);
+      }
+    );
   }
 }

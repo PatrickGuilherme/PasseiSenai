@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './Components/main-page/main-page.component';
 import { BannerTitleComponent } from './Components/banner-title/banner-title.component';
+import { ApiService } from './Service/api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,13 @@ import { BannerTitleComponent } from './Components/banner-title/banner-title.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClientModule,
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
