@@ -1,0 +1,97 @@
+<app-banner-title></app-banner-title>
+<div class="container box-main">
+    <form [formGroup]="gradeForm" (ngSubmit)="OnSubmit()">
+        <div class="form-group form-box">
+            <label for="av1">AV1</label>
+            
+            <input 
+                class="form-control"
+                type="number" 
+                formControlName="av1" 
+                placeholder="0-10">
+    
+            <small class="form-text text-danger">{{VerifyErros("av1")}}</small>
+        </div>
+    
+        <div class="form-group form-box">
+            <label for="av1">AV2</label>
+            
+            <input 
+                class="form-control"
+                type="number"
+                formControlName="av2"
+                placeholder="0-10">
+            
+            <small class="form-text text-danger">{{VerifyErros("av2")}}</small>
+        </div>
+    
+        <div class="form-group form-box">
+            <label for="av1">AV3</label>
+    
+            <input 
+                class="form-control" 
+                type="number"
+                formControlName="av3"
+                placeholder="0-10">
+            
+            <small class="form-text text-danger">{{VerifyErros("av3")}}</small>
+        </div>
+    
+        <div class="form-group form-box">
+            <label for="edag">EDAG</label>
+    
+            <input 
+                class="form-control"
+                type="number"
+                formControlName="edag" 
+                placeholder="0-10">
+            
+            <small class="form-text text-danger">{{VerifyErros("edag")}}</small>
+        </div>
+    
+        <button style="width: 100%;" class="btn btn-primary button-box" type="submit" [disabled]="!gradeForm.valid">Calcular</button>
+    </form>
+    
+    <div *ngIf="ResultMedia() != null" class="card" style="width: 100%;">
+        <div class="box-grade" [ngStyle]="{'background-color': ResultMedia().ColorGrade}">
+            <h1>{{ResultMedia().Grade.toFixed(1)}}</h1>
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                {{ResultMedia().Msg}}
+            </p>
+        </div>
+        <table class="table">
+            <thead>
+              <tr style="text-align: center;">
+                <th scope="col">Avaliação</th>
+                <th scope="col">Nota</th>
+                <th scope="col">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="text-align: center;">
+                <td>AV1</td>
+                <td>{{gradeForm.value.av1}}</td>
+                <td>25%</td>
+              </tr>
+              <tr style="text-align: center;">
+                <td>AV2</td>
+                <td>{{gradeForm.value.av2}}</td>
+                <td>25%</td>
+              </tr>
+              <tr style="text-align: center;">
+                <td>AV3</td>
+                <td>{{gradeForm.value.av3}}</td>
+                <td>30%</td>
+              </tr>
+              <tr style="text-align: center;">
+                <td>EDAG</td>
+                <td>{{gradeForm.value.edag}}</td>
+                <td>20%</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+

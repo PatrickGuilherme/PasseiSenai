@@ -8,6 +8,8 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
+    "strictPropertyInitialization": false,//faz o TS parar de implicar com variaveis não inicializadas
+    "strictNullChecks":false,//faz com que se permita atribuir nulo a objetos
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
