@@ -57,6 +57,7 @@ export class MainPageComponent implements OnInit {
   }
 
   public ResultMedia():Result {
+    console.log(this.Media);
     return this.Media;
   }
 
@@ -81,5 +82,6 @@ export class MainPageComponent implements OnInit {
     } else{
       colorGrade = "#28a745";
     }
+    this.Media = new Result(calcResult,colorGrade)
   }
 }
