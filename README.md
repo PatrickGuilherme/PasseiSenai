@@ -41,9 +41,6 @@ Uma aplicação de página unica (SPA) que calcula a nota media do semestre de e
 <h2 id="prereq">📀 Pré-requisitos e como rodar a aplicação</h2>
 <!--Descrição do pré requisito de instalação na maquina em forma de passo a passo-->
 <ol>
-
-   "node": "16.13.1",
-    "npm": "8.1.2"
     <li>Instalar node 16.13.1</li>
     <li>Instalar npm 8.1.2</li>
     <li>Instalar angular CLI 13.0.3</li>
