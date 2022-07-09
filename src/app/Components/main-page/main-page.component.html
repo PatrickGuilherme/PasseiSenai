@@ -1,97 +1,145 @@
 <app-banner-title></app-banner-title>
 <div class="container box-main">
-    <form [formGroup]="gradeForm" (ngSubmit)="OnSubmit()">
-        <div class="form-group form-box">
-            <label for="av1">AV1</label>
-            
-            <input 
-                class="form-control"
-                type="number" 
-                formControlName="av1" 
-                placeholder="0-10">
+  <form [formGroup]="gradeForm" (ngSubmit)="OnSubmit()">
+    <div class="form-group form-box">
+      <label for="av1">AV1</label>
+      <input 
+          class="form-control"
+          type="number" 
+          formControlName="av1" 
+          placeholder="0-10">
     
-            <small class="form-text text-danger">{{VerifyErros("av1")}}</small>
-        </div>
-    
-        <div class="form-group form-box">
-            <label for="av1">AV2</label>
-            
-            <input 
-                class="form-control"
-                type="number"
-                formControlName="av2"
-                placeholder="0-10">
-            
-            <small class="form-text text-danger">{{VerifyErros("av2")}}</small>
-        </div>
-    
-        <div class="form-group form-box">
-            <label for="av1">AV3</label>
-    
-            <input 
-                class="form-control" 
-                type="number"
-                formControlName="av3"
-                placeholder="0-10">
-            
-            <small class="form-text text-danger">{{VerifyErros("av3")}}</small>
-        </div>
-    
-        <div class="form-group form-box">
-            <label for="edag">EDAG</label>
-    
-            <input 
-                class="form-control"
-                type="number"
-                formControlName="edag" 
-                placeholder="0-10">
-            
-            <small class="form-text text-danger">{{VerifyErros("edag")}}</small>
-        </div>
-    
-        <button style="width: 100%;" class="btn btn-primary button-box" type="submit" [disabled]="!gradeForm.valid">Calcular</button>
-    </form>
-    
-    <div *ngIf="ResultMedia() != null" class="card" style="width: 100%;">
-        <div class="box-grade" [ngStyle]="{'background-color': ResultMedia().ColorGrade}">
-            <h1>{{ResultMedia().Grade.toFixed(1)}}</h1>
-        </div>
-        <div class="card-body">
-            <p class="card-text">
-                {{ResultMedia().Msg}}
-            </p>
-        </div>
-        <table class="table">
-            <thead>
-              <tr style="text-align: center;">
-                <th scope="col">Avaliação</th>
-                <th scope="col">Nota</th>
-                <th scope="col">%</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="text-align: center;">
-                <td>AV1</td>
-                <td>{{gradeForm.value.av1}}</td>
-                <td>25%</td>
-              </tr>
-              <tr style="text-align: center;">
-                <td>AV2</td>
-                <td>{{gradeForm.value.av2}}</td>
-                <td>25%</td>
-              </tr>
-              <tr style="text-align: center;">
-                <td>AV3</td>
-                <td>{{gradeForm.value.av3}}</td>
-                <td>30%</td>
-              </tr>
-              <tr style="text-align: center;">
-                <td>EDAG</td>
-                <td>{{gradeForm.value.edag}}</td>
-                <td>20%</td>
-              </tr>
-            </tbody>
-          </table>
+      <small class="form-text text-danger">{{VerifyErros("av1")}}</small>
     </div>
-</div>
+    
+    <div class="form-group form-box">
+      <label for="av1">AV2</label>
+            
+      <input 
+          class="form-control"
+          type="number"
+          formControlName="av2"
+          placeholder="0-10">
+      
+      <small class="form-text text-danger">{{VerifyErros("av2")}}</small>
+    </div>
+    
+    <div class="form-group form-box">
+      <label for="av1">AV3</label>
+    
+      <input 
+          class="form-control" 
+          type="number"
+          formControlName="av3"
+          placeholder="0-10">
+            
+      <small class="form-text text-danger">{{VerifyErros("av3")}}</small>
+    </div>
+    
+    <div class="form-group form-box">
+      <label for="edag">EDAG</label>
+    
+      <input 
+          class="form-control"
+          type="number"
+          formControlName="edag" 
+          placeholder="0-10">
+            
+      <small class="form-text text-danger">{{VerifyErros("edag")}}</small>
+    </div>
+    
+    <button class="btn btn-primary button-box" type="submit" [disabled]="!gradeForm.valid">Calcular</button>
+  </form>
+    <!--*ngIf="ResultMedia()"-->
+  <div class="card card-box" >
+    <div class="box-grade" [ngStyle]="{'background-color': ResultMedia().ColorGrade}">
+      <h1>
+        {{
+          ResultMedia().Grade.toString()
+        }}
+      </h1>
+    </div>
 
+    <div class="card-body">
+      <div class="list-colors">
+        <div class="cube-color apr"></div>
+        <span>Aprovado</span>
+      </div>
+
+      <div class="list-colors">
+        <div class="cube-color rep"></div>
+        <span>Reprovado</span>
+      </div>
+
+      <p class="text-p-justify" style="margin-top:5%;">
+        A média do semestre é calculada considerando pesos para cada avaliação (veja na tabela abaixo), é feito o somatório da notas vezes os pesos, dividindo o resultado total por 100. 
+      </p>
+    </div>
+    <table class="table">
+        <thead>
+          <tr style="text-align: center;">
+            <th scope="col">Avaliação</th>
+            <th scope="col">Nota</th>
+            <th scope="col">%</th>
+          </tr>
+        </thead>
+      <tbody>
+        <tr class="text-center">
+          <td>AV1</td>
+          <td>{{GetGrade("av1")}}</td>
+          <td>25%</td>
+        </tr>
+        <tr class="text-center">
+          <td>AV2</td>
+          <td>{{GetGrade("av2")}}</td>
+          <td>25%</td>
+        </tr>
+        <tr class="text-center">
+          <td>AV3</td>
+          <td>{{GetGrade("av3")}}</td>
+          <td>30%</td>
+        </tr>
+        <tr class="text-center">
+          <td>EDAG</td>
+          <td>{{GetGrade("edag")}}</td>
+          <td>20%</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container" *ngIf="ResultMediaFinal() > 10">
+      <div class="alert alert-danger">
+        <span>Você não poderá fazer a final, você foi <strong class="alert-link">REPROVADO</strong> na matéria :(</span>
+      </div>
+    </div>
+
+    <div class="container" *ngIf="ResultMediaFinal() <= 10 && ResultMedia().Grade < 7">
+      <h3 class="text-center">Bem Vindo a FINAL</h3>
+      <p class="text-p-justify">Para os estudantes que tiveram a media < 7 e tiveram uma média >= 1,7, infelizmente terão que fazer a final, abaixo você verá a pontuação necessária para ser aprovado.</p>
+    </div>
+
+    <div style="display: flex;" *ngIf="ResultMediaFinal() <= 10 && ResultMedia().Grade < 7">
+      <div style="width: 50%;">
+        <div class="text-center" style="padding: 5%;">
+          <h1 class="rating-num">
+            {{
+              ResultMedia().Grade.toString()
+            }}
+          </h1>
+          <div>
+              <span class="glyphicon glyphicon-user"></span>Sua média no semestre
+          </div>
+        </div>
+      </div>
+      <div style="width: 50%;">
+        <div class="text-center" style="padding: 5%;">
+          <h1 class="rating-num">
+            <span>{{ResultMediaFinal()}}</span>
+          </h1>
+          <div>
+              <span>Pontuação necessária para aprovação</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
