@@ -50,8 +50,8 @@
     
     <button class="btn btn-primary button-box" type="submit" [disabled]="!gradeForm.valid">Calcular</button>
   </form>
-    <!--*ngIf="ResultMedia()"-->
-  <div class="card card-box" >
+
+  <div class="card card-box" *ngIf="ResultMedia()">
     <div class="box-grade" [ngStyle]="{'background-color': ResultMedia().ColorGrade}">
       <h1>
         {{

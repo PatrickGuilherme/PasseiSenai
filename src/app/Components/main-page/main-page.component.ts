@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Result } from 'src/app/Models/Result';
-import { ApiService } from 'src/app/Service/api.service';
 
 @Component({
   selector: 'app-main-page',
@@ -20,8 +19,7 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private formbuilder:FormBuilder, 
-    private apiservice:ApiService) {
+  constructor(private formbuilder:FormBuilder) {
   }
 
   public GetGrade(gradeTipo:string){
@@ -83,17 +81,5 @@ export class MainPageComponent implements OnInit {
     } else{
       colorGrade = "#28a745";
     }
-
-    this.apiservice.GetQuote().subscribe(
-      Response => {
-        textMotivation =  Response.slip.advice;
-        console.log(Response.slip.advice)
-        this.Media = new Result(calcResult,textMotivation,colorGrade);
-      },
-      Error => {
-        textMotivation = "Sem frases hoje, volte amanhã";
-        this.Media = new Result(calcResult,textMotivation,colorGrade);
-      }
-    );
   }
 }
