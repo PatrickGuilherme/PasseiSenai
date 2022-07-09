@@ -32,9 +32,9 @@ Uma aplicação de página unica (SPA) que calcula a nota media do semestre de e
 <h2 id="demo">🎥 Demonstração da aplicação</h2>
 <!--Conjunto de prints da aplicação-->
 <h1 align="center">
-    <img title="Imagem 1" src=""/>
-    <img title="Imagem 2" src=""/>
-    <img title="Imagem 3" src=""/>
+    <img title="Imagem 1" src="./src/assets/print1.png/"/>
+    <img title="Imagem 2" src="./src/assets/print2.png/"/>
+    <img title="Imagem 3" src="./src/assets/print3.png/"/>
 </h1>
 
 
