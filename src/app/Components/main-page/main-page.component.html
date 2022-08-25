@@ -1,5 +1,6 @@
 <app-banner-title></app-banner-title>
 <div class="container box-main">
+  <!--FORMULÁRIO-->
   <form [formGroup]="gradeForm" (ngSubmit)="OnSubmit()">
     <div class="form-group form-box">
       <label for="av1">AV1</label>
@@ -8,8 +9,8 @@
           type="number" 
           formControlName="av1" 
           placeholder="0-10">
-    
-      <small class="form-text text-danger">{{VerifyErros("av1")}}</small>
+      
+      <small *ngIf="VerifyErros('av1') !== null" class="form-text text-danger">{{VerifyErros("av1")}}</small>
     </div>
     
     <div class="form-group form-box">
@@ -21,7 +22,7 @@
           formControlName="av2"
           placeholder="0-10">
       
-      <small class="form-text text-danger">{{VerifyErros("av2")}}</small>
+      <small *ngIf="VerifyErros('av2') !== null" class="form-text text-danger">{{VerifyErros("av2")}}</small>
     </div>
     
     <div class="form-group form-box">
@@ -33,7 +34,7 @@
           formControlName="av3"
           placeholder="0-10">
             
-      <small class="form-text text-danger">{{VerifyErros("av3")}}</small>
+      <small *ngIf="VerifyErros('av3') !== null" class="form-text text-danger">{{VerifyErros("av3")}}</small>
     </div>
     
     <div class="form-group form-box">
@@ -45,11 +46,17 @@
           formControlName="edag" 
           placeholder="0-10">
             
-      <small class="form-text text-danger">{{VerifyErros("edag")}}</small>
+      <small *ngIf="VerifyErros('edag') !== null" class="form-text text-danger">{{VerifyErros("edag")}}</small>
     </div>
     
     <button class="btn btn-primary button-box" type="submit" [disabled]="!gradeForm.valid">Calcular</button>
   </form>
+
+
+
+
+
+
 
   <div class="card card-box" *ngIf="ResultMedia()">
     <div class="box-grade" [ngStyle]="{'background-color': ResultMedia().ColorGrade}">
@@ -114,7 +121,7 @@
 
     <div class="container" *ngIf="ResultMediaFinal() <= 10 && ResultMedia().Grade < 7">
       <h3 class="text-center">Bem Vindo a FINAL</h3>
-      <p class="text-p-justify">Para os estudantes que tiveram a media < 7 e tiveram uma média >= 1,7, infelizmente terão que fazer a final, abaixo você verá a pontuação necessária para ser aprovado.</p>
+      <p class="text-p-justify">Para os estudantes que tiveram a média < 7 e tiveram uma média >= 1,7, infelizmente terão que fazer a final, abaixo você verá a pontuação necessária para ser aprovado.</p>
     </div>
 
     <div style="display: flex;" *ngIf="ResultMediaFinal() <= 10 && ResultMedia().Grade < 7">
