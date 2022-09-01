@@ -17,7 +17,7 @@
 <h2 id="sobre">💻 Sobre</h2>
 <!--Descrição do contexto e produto do projeto - Consulte o documento F001-NDSI-Levantamento de Macro Requisitos-->
 <p align="justify">
-Uma aplicação de página unica (SPA) que calcula a nota media do semestre de estudantes da graduação do SENAI CIMATEC e estipula a pontuação mínima necessária para aprovação caso o estudante for fazer a FINAL(avaliação caso o estudante não atinja a media do semestre). 
+Uma aplicação de página única (SPA) que calcula a nota media do semestre de estudantes da graduação do SENAI CIMATEC e estipula a pontuação mínima necessária para aprovação caso o estudante for fazer a FINAL(avaliação caso o estudante não atinja a media do semestre). 
 </p>
 
 
