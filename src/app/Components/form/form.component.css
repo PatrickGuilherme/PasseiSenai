@@ -1,0 +1,32 @@
+.box-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+}
+
+.box-form-fields{
+    width: 40%;
+    background-color: rgb(43, 226, 58);
+}
+
+.form-input{
+    width: 100%;
+}
+
+.btn-send-data{
+    width: 100%;
+}
+
+/* Esconder scrollnumber: Chrome e outros */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*Esconder scrollnumber: Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

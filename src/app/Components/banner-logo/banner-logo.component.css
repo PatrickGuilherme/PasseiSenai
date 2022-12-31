@@ -1,0 +1,26 @@
+.banner-logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: aqua;
+}
+
+.div-logo{
+    width: 200px;
+}
+
+.main-logo{
+    width: 100%;
+}
+
+.div-title{
+    width: 100%;
+    text-align: center;
+}
+
+.div-title h1 {
+    font-family: sans-serif;
+    color: #407BFF;
+}
