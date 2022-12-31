@@ -14,7 +14,8 @@ export class MainPageComponent implements OnInit {
     av2: [undefined, [Validators.required, Validators.min(0), Validators.max(10)]],
     av3: [undefined, [Validators.required, Validators.min(0), Validators.max(10)]],
     edag: [undefined, [Validators.required, Validators.min(0), Validators.max(10)]]
-  });
+  }
+  );
 
   ngOnInit(): void {
   }
@@ -22,6 +23,7 @@ export class MainPageComponent implements OnInit {
   constructor(private formbuilder:FormBuilder) {
   }
 
+  //Pega o valor da nota e exibe na tela
   public GetGrade(gradeTipo:string){
     let valueResturn:number;
     switch(gradeTipo){
@@ -41,34 +43,36 @@ export class MainPageComponent implements OnInit {
     return valueResturn;
   }
 
+  //Verifcação de erros 
   public VerifyErros(variable:string):string {
-    if(!this.gradeForm.dirty) return "";
-    else
-    if(this.gradeForm.getError('required',variable)) return "Campo obrigatório";
+    if(this.gradeForm.getError('required',variable) && this.gradeForm.get(variable).touched) return "Campo obrigatório ou inválido";
     else 
-    if(this.gradeForm.getError('min',variable)) return "Valor minimo de 0";
+    if(this.gradeForm.getError('min',variable) && this.gradeForm.get(variable).touched) return "Valor mínimo de 0";
     else
-    if(this.gradeForm.getError('max',variable)) return "Valor maximo de 10";
-    else return "";
+    if(this.gradeForm.getError('max',variable) && this.gradeForm.get(variable).touched) return "Valor máximo de 10";
+    else 
+    return "";
   }
-
-  public ResultMediaFinal():number{
+  
+  //Calcular media final
+  public ResultMediaFinal():number {
     return this.Arred((50-6*this.Media.Grade)/4);
   }
 
+  //Retornar a media
   public ResultMedia():Result {
-    console.log(this.Media);
     return this.Media;
   }
 
+  //Arredondar
   private Arred(media:number):number { 
     var aux = Math.pow(10,1)
     return Math.floor(media * aux)/aux
  }
 
+ //Submit do formulário
   public OnSubmit() {
     let colorGrade:string;
-    let textMotivation:string;
     let av1:number = this.gradeForm.value.av1;
     let av2:number = this.gradeForm.value.av2;
     let av3:number = this.gradeForm.value.av3;
