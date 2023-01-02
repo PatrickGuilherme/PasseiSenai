@@ -12,22 +12,23 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.gradeForm = this.formbuilder.group({
-      av1: [undefined, [Validators.required, Validators.min(0), Validators.max(10)]],
-      av2: [undefined, [Validators.required, Validators.min(0), Validators.max(10)]],
-      av3: [undefined, [Validators.required, Validators.min(0), Validators.max(10)]],
-      edag: [undefined, [Validators.required, Validators.min(0), Validators.max(10)]]
+      av1: ['', [Validators.required, Validators.min(0), Validators.max(10), Validators.maxLength(3)]],
+      av2: ['', [Validators.required, Validators.min(0), Validators.max(10), Validators.maxLength(3)]],
+      av3: ['', [Validators.required, Validators.min(0), Validators.max(10), Validators.maxLength(3)]],
+      edag:['', [Validators.required, Validators.min(0), Validators.max(10), Validators.maxLength(3)]]
     });
   }
 
+  //Verifcação de erros 
   public VerifyErros(variable:string):string {
-    if(!this.gradeForm.dirty) return "";
-    else
-    if(this.gradeForm.getError('required',variable)) return "Campo obrigatório";
+    if(this.gradeForm.getError('required',variable) && this.gradeForm.get(variable).touched) return "Campo obrigatório";
     else 
-    if(this.gradeForm.getError('min',variable)) return "Valor minimo de 0";
+    if(this.gradeForm.getError('min',variable) && this.gradeForm.get(variable).touched) return "Valor mínimo de 0";
     else
-    if(this.gradeForm.getError('max',variable)) return "Valor maximo de 10";
-    else return "";
+    if(this.gradeForm.getError('max',variable) && this.gradeForm.get(variable).touched) return "Valor máximo de 10";
+    else 
+    if(typeof(parseFloat(this.gradeForm.get(variable).value)) != 'number' && this.gradeForm.get(variable).touched) return "Valor Inválido 2";
+    else
+    return "";
   }
-
 }

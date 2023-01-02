@@ -9,13 +9,13 @@
                 matInput 
                 type="text" 
                 placeholder="Valor de 0 a 10"
-                pattern="[0-9]"
                 onpaste="return false" 
                 ondrop="return false"
-                onkeypress="{ return event.charCode == 44 || (event.charCode >= 48 && event.charCode <= 57) }">
-            <mat-hint *ngIf="VerifyErros('av1')">
+                autocomplete="off"
+                onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
+            <mat-error *ngIf="VerifyErros('av1')">
                 {{VerifyErros("av1")}}
-            </mat-hint>
+            </mat-error>
         </mat-form-field>
 
         <!--INPUT 2ª AVALIAÇÃO-->
@@ -26,13 +26,13 @@
                 matInput 
                 type="text" 
                 placeholder="Valor de 0 a 10"
-                pattern="[0-9]"
                 onpaste="return false" 
                 ondrop="return false"
-                onkeypress="{ return event.charCode == 44 || (event.charCode >= 48 && event.charCode <= 57) }">
-            <mat-hint *ngIf="VerifyErros('av2')">
+                autocomplete="off"
+                onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
+            <mat-error *ngIf="VerifyErros('av2')">
                 {{VerifyErros("av2")}}
-            </mat-hint>
+            </mat-error>
         </mat-form-field>
     
         <!--INPUT 3ª AVALIAÇÃO-->
@@ -43,15 +43,16 @@
                 matInput 
                 type="text" 
                 placeholder="Valor de 0 a 10"
-                pattern="[0-9]"
                 onpaste="return false" 
                 ondrop="return false"
-                onkeypress="{ return event.charCode == 44 || (event.charCode >= 48 && event.charCode <= 57) }">
-            <mat-hint *ngIf="VerifyErros('av3')">
+                autocomplete="off"
+                onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
+            <mat-error *ngIf="VerifyErros('av3')">
                 {{VerifyErros("av3")}}
-            </mat-hint>
+            </mat-error>
         </mat-form-field>
     
+        <!--INPUT 4ª AVALIAÇÃO EDAG-->
         <mat-form-field class="form-group form-input">
             <mat-label>4ª Avaliação - EDAG</mat-label>
             <input 
@@ -59,10 +60,10 @@
                 matInput 
                 type="text" 
                 placeholder="Valor de 0 a 10"
-                pattern="[0-9]"
                 onpaste="return false" 
                 ondrop="return false"
-                onkeypress="{ return event.charCode == 44 || (event.charCode >= 48 && event.charCode <= 57) }">
+                autocomplete="off"
+                onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
             <mat-error *ngIf="VerifyErros('edag')">
                 {{VerifyErros("edag")}}
             </mat-error>
