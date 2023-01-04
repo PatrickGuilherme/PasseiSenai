@@ -1,3 +1,4 @@
+/*Div principal do componente*/
 .box-form{
     display: flex;
     flex-direction: column;
@@ -6,16 +7,27 @@
     background-color: blueviolet;
 }
 
+/*Div do formulário*/
 .box-form-fields{
     width: 40%;
     background-color: rgb(43, 226, 58);
 }
 
+/*Adaptação para mobile da div do formulário*/
+@media only screen and (max-width: 768px) {
+  .box-form-fields{
+    width: 90%;
+    background-color: rgb(113, 15, 15);
+  }
+}
+
+/*Div dos campos de input*/
 .form-input{
     width: 100%;
     margin-bottom: 3%;
 }
 
+/*Div do botão de calcular*/
 .btn-send-data{
     width: 100%;
 }
@@ -27,7 +39,12 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/*Esconder scrollnumber: Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+
+.box-main{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(131, 112, 64);
 }
