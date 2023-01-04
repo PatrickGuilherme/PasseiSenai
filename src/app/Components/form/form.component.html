@@ -1,4 +1,4 @@
-<form class="box-form" [formGroup]="gradeForm">
+<form class="box-form" [formGroup]="gradeForm" (ngSubmit)="SubmitForm()">
     <div class="box-form-fields">
 
         <!--INPUT 1ª AVALIAÇÃO-->
@@ -12,6 +12,7 @@
                 onpaste="return false" 
                 ondrop="return false"
                 autocomplete="off"
+                maxlength="3"
                 onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
             <mat-error *ngIf="VerifyErros('av1')">
                 {{VerifyErros("av1")}}
@@ -29,6 +30,7 @@
                 onpaste="return false" 
                 ondrop="return false"
                 autocomplete="off"
+                maxlength="3"
                 onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
             <mat-error *ngIf="VerifyErros('av2')">
                 {{VerifyErros("av2")}}
@@ -46,6 +48,7 @@
                 onpaste="return false" 
                 ondrop="return false"
                 autocomplete="off"
+                maxlength="3"
                 onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
             <mat-error *ngIf="VerifyErros('av3')">
                 {{VerifyErros("av3")}}
@@ -63,12 +66,18 @@
                 onpaste="return false" 
                 ondrop="return false"
                 autocomplete="off"
+                maxlength="3"
                 onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
             <mat-error *ngIf="VerifyErros('edag')">
                 {{VerifyErros("edag")}}
             </mat-error>
         </mat-form-field>
         
-        <button class="btn btn-primary btn-send-data" type="submit">Calcular</button>
+        <button class="btn btn-primary btn-send-data" type="submit" [disabled]="gradeForm.invalid">Calcular</button>
     </div>
 </form>
+<!--<div *ngIf="Grade">-->
+    <div class="box-main">
+        <app-box-media [grade]='Grade'></app-box-media>
+    </div>
+<!--</div>-->
