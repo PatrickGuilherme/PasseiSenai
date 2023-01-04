@@ -25,6 +25,8 @@ import { BannerTitleComponent } from './Components/banner-title/banner-title.com
 import { BannerLogoComponent } from './Components/banner-logo/banner-logo.component';
 import { FormComponent } from './Components/form/form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BoxMediaComponent } from './Components/form/box-media/box-media.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainPageComponent,
     BannerTitleComponent,
     BannerLogoComponent,
-    FormComponent
+    FormComponent,
+    BoxMediaComponent
   ],
   imports: [
     MatToolbarModule,
@@ -47,6 +50,7 @@ MatTableModule,
 MatPaginatorModule, 
  MatSortModule ,
 MatInputModule ,
+MatCardModule,
 MatDatepickerModule, 
     BrowserModule,
     AppRoutingModule,
