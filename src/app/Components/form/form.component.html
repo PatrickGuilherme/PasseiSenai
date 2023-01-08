@@ -1,4 +1,4 @@
-<form class="box-form" [formGroup]="gradeForm" (ngSubmit)="SubmitForm()">
+<form class="box-form" [formGroup]="estudanteForm" (ngSubmit)="SubmitForm()">
     <div class="box-form-fields">
 
         <!--INPUT 1ª AVALIAÇÃO-->
@@ -73,11 +73,14 @@
             </mat-error>
         </mat-form-field>
         
-        <button class="btn btn-primary btn-send-data" type="submit" [disabled]="gradeForm.invalid">Calcular</button>
+        <button class="btn btn-primary btn-send-data" type="submit" [disabled]="estudanteForm.invalid">Calcular</button>
     </div>
 </form>
-<!--<div *ngIf="Grade">-->
-    <div class="box-main">
-        <app-box-media [grade]='Grade'></app-box-media>
-    </div>
-<!--</div>-->
+
+<div *ngIf="estudante" class="box-main">
+    <app-box-media [estudante]='estudante'></app-box-media>
+    <app-box-media-final [estudante]='estudante' *ngIf="estudante.StatusEstudante() == 2"></app-box-media-final>
+</div>
+
+
+
