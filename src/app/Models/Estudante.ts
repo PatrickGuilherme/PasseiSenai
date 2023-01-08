@@ -29,7 +29,10 @@ export class Estudante {
         if( mediaSemestre >= 7){
             return 1;//APROVADO DIRETO
         }else{
-            if(avaliacaoFinal <= 10 && mediaSemestre < 7  ) return 2; //FINAL
+            if(avaliacaoFinal >= 0  && 
+               avaliacaoFinal <= 10 && 
+               mediaSemestre < 7    && 
+               mediaSemestre >= 0 ) return 2; //FINAL
             return 0;//REPROVADO
         }
     }
@@ -56,10 +59,22 @@ export class Estudante {
         let aprovGlobal:number;
         let avFinal:number;
 
+        //Calcula o aproveitamento global e a nota da AVF
         aprovGlobal = this.CalcAproveitamentoGlobal();
         avFinal = ( 50 - 6 * aprovGlobal) / 4;
-        console.log(avFinal);
-        if(aprovGlobal >= 0 && avFinal <= 10) return  Math.round(parseFloat(avFinal.toFixed(1)));
+        
+        //Captura a parte decimal do numero
+        let avfString = avFinal.toString().split('.');
+        if(aprovGlobal >= 0 && avFinal <= 10){
+            if(avfString[1] && avfString[1][1]){
+
+                //Aproxima quando o numero decimal depois da virgular for quebrado
+                if(Number(avfString[1][1]) > 0 ){
+                    return  parseFloat(avFinal.toFixed(1)) + 0.1;
+                }
+            }
+            return  parseFloat(avFinal.toFixed(1));
+        } 
         return -1;
     }
 }
