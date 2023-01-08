@@ -1,20 +1,18 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Grade } from 'src/app/Models/Grade';
+import { Estudante } from 'src/app/Models/Estudante';
 
 @Component({
   selector: 'app-box-media',
   templateUrl: './box-media.component.html',
-  styleUrls: ['./box-media.component.css']
+  styleUrls: ['../cards.css']
 })
 export class BoxMediaComponent implements OnInit {
-  @Input() public grade:Grade;
+  @Input() public estudante:Estudante;
 
   constructor() { 
-    console.log(this.grade)
   }
 
   ngOnInit(): void {
-    console.log(this.grade)
   }
 
 }
