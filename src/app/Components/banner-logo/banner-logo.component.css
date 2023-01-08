@@ -5,11 +5,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: aqua;
 }
 
 .div-logo{
-    width: 200px;
+    width: 270px;
 }
 
 .main-logo{
@@ -24,5 +23,9 @@
 .div-title h1 {
     font-family: sans-serif;
     font-size: xx-large;
-    color: #407BFF;
+    color: var(--blue);
+}
+
+.logotitle{
+ width: 300px;   
 }
