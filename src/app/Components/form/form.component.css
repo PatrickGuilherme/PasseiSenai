@@ -4,20 +4,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: blueviolet;
 }
 
 /*Div do formulário*/
 .box-form-fields{
     width: 40%;
-    background-color: rgb(43, 226, 58);
 }
 
 /*Adaptação para mobile da div do formulário*/
 @media only screen and (max-width: 768px) {
   .box-form-fields{
     width: 90%;
-    background-color: rgb(113, 15, 15);
   }
 }
 
@@ -39,12 +36,16 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-
+/*Div que engloba os cards*/
 .box-main{
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(131, 112, 64);
+  padding: 20px;
+}
+
+app-box-media{
+  margin-bottom: 3%;
 }

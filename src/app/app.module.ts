@@ -27,6 +27,7 @@ import { FormComponent } from './Components/form/form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoxMediaComponent } from './Components/form/box-media/box-media.component';
 import { MatCardModule } from '@angular/material/card';
+import { BoxMediaFinalComponent } from './Components/form/box-media-final/box-media-final.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MatCardModule } from '@angular/material/card';
     BannerTitleComponent,
     BannerLogoComponent,
     FormComponent,
-    BoxMediaComponent
+    BoxMediaComponent,
+    BoxMediaFinalComponent
   ],
   imports: [
     MatToolbarModule,
