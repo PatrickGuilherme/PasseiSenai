@@ -1,0 +1,51 @@
+/*Div principal do componente*/
+.box-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Div do formulário*/
+.box-form-fields{
+    width: 40%;
+}
+
+/*Adaptação para mobile da div do formulário*/
+@media only screen and (max-width: 768px) {
+  .box-form-fields{
+    width: 90%;
+  }
+}
+
+/*Div dos campos de input*/
+.form-input{
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+/*Div do botão de calcular*/
+.btn-send-data{
+    width: 100%;
+}
+
+/* Esconder scrollnumber: Chrome e outros */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*Div que engloba os cards*/
+.box-main{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+app-box-media{
+  margin-bottom: 3%;
+}

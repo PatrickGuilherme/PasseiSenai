@@ -1,0 +1,25 @@
+<mat-card class="mainCard">
+    <mat-card-header class="headerCard">
+        <div mat-card-avatar class="numberCard numberCardColorFinal">
+            <span><strong>{{estudante.CalcAvalicaoFinal()}}</strong></span>
+        </div>
+        <div>
+            <mat-card-title>Pontuação para Aprovação</mat-card-title>
+            <span><strong>Este é o quanto você precisa na Final</strong></span>
+        </div>
+    </mat-card-header>
+    <mat-card-content class="bodyCard">
+        <p>
+            O estudante que não obtiver ao final das unidades
+            curriculares aproveitamento global <strong>(AG)</strong> igual ou superior a 7,0 (sete) poderá fazer Avaliação
+            Final <strong>(AF)</strong>, em caráter de recuperação, para apuração de Aproveitamento Final <strong>(ApF)</strong>
+        </p>
+        <p>
+            A pontuação marcada em <strong style="color: var(--blue);">azul</strong> descreve o valor mínimo necessário que deve ser alcaçado na Avaliação Final.
+        </p>
+        <div class="box-formula">
+            <span><strong>Pontuação necessária = (50 - 6 x AG) / 4</strong></span>
+        </div>
+
+    </mat-card-content>
+</mat-card>  
