@@ -16,10 +16,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { MainPageComponent } from './Components/main-page/main-page.component';
 import { BannerTitleComponent } from './Components/banner-title/banner-title.component';
 import { BannerLogoComponent } from './Components/banner-logo/banner-logo.component';
@@ -28,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoxMediaComponent } from './Components/form/box-media/box-media.component';
 import { MatCardModule } from '@angular/material/card';
 import { BoxMediaFinalComponent } from './Components/form/box-media-final/box-media-final.component';
+import { BoxPrevisaoComponent } from './Components/form/box-previsao/box-previsao.component';
 
 @NgModule({
   declarations: [
@@ -37,23 +36,24 @@ import { BoxMediaFinalComponent } from './Components/form/box-media-final/box-me
     BannerLogoComponent,
     FormComponent,
     BoxMediaComponent,
-    BoxMediaFinalComponent
+    BoxMediaFinalComponent,
+    BoxPrevisaoComponent
   ],
   imports: [
     MatToolbarModule,
-MatIconModule,
-MatButtonModule, 
-MatGridListModule, 
-MatFormFieldModule, 
-MatSelectModule, 
-MatSidenavModule, 
-MatRadioModule,
-MatTableModule,
-MatPaginatorModule, 
- MatSortModule ,
-MatInputModule ,
-MatCardModule,
-MatDatepickerModule, 
+    MatIconModule,
+    MatButtonModule, 
+    MatGridListModule, 
+    MatFormFieldModule, 
+    MatSelectModule, 
+    MatSidenavModule, 
+    MatRadioModule,
+    MatTableModule,
+    MatPaginatorModule, 
+    MatSortModule ,
+    MatInputModule ,
+    MatCardModule,
+    MatDatepickerModule, 
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

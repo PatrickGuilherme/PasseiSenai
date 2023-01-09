@@ -34,6 +34,20 @@ export class FormComponent implements OnInit {
     return "";
   }
 
+  public PrevisaoNotas():void{
+    this.estudante = new Estudante(
+      parseFloat(this.estudanteForm.value.av1),
+      parseFloat(this.estudanteForm.value.av2),
+      parseFloat(this.estudanteForm.value.av3),
+      parseFloat(this.estudanteForm.value.edag)
+    );
+    console.log("=============")
+    console.log(this.estudante);
+    console.log("=============")
+    console.log(this.estudante.CalcPrevisaoNotas());
+    console.log("=============")
+  }
+
   public SubmitForm():void{
     if(this.estudanteForm.valid){
       this.estudante = new Estudante(
