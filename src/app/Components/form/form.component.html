@@ -73,16 +73,11 @@
             </mat-error>
         </mat-form-field>
         
-        <button class="btn btn-primary btn-send-data" (click)="PrevisaoNotas()">Previsão</button>
         <button class="btn btn-primary btn-send-data" type="submit" [disabled]="estudanteForm.invalid">Calcular</button>
     </div>
 </form>
 
 <div *ngIf="estudante" class="box-main">
-    <app-box-previsao
-        [estudante]='estudante'>
-    </app-box-previsao>
-
     <app-box-media 
         [estudante]='estudante'>
     </app-box-media>
@@ -91,6 +86,10 @@
         [estudante]='estudante' 
         *ngIf="estudante.StatusEstudante() == 2">
     </app-box-media-final>    
+
+    <!-- <app-box-previsao
+        [estudante]='estudante'>
+    </app-box-previsao> -->
 </div>
 
 

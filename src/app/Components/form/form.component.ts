@@ -41,11 +41,6 @@ export class FormComponent implements OnInit {
       parseFloat(this.estudanteForm.value.av3),
       parseFloat(this.estudanteForm.value.edag)
     );
-    console.log("=============")
-    console.log(this.estudante);
-    console.log("=============")
-    console.log(this.estudante.CalcPrevisaoNotas());
-    console.log("=============")
   }
 
   public SubmitForm():void{
