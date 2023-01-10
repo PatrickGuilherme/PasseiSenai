@@ -58,8 +58,7 @@ Uma aplicação de página única (SPA) que calcula a nota media do semestre de 
     <li>HTML 5</li>
     <li>CSS 3</li>
     <li>Typescript</li>
-    <li>Express</li>
-    <li>Heroku (publicação)</li>
+    <li>Angular Material</li>
 </ul>
 
 
