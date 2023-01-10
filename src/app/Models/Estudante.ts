@@ -78,60 +78,25 @@ export class Estudante {
         return -1;
     }
 
-    public CalcPrevisaoNotas():void{
-        //Notas capturadas
-        let av1 = this.av1;
-        let av2 = this.av2;
-        let av3 = this.av3;
-        let av4 = this.av4;
-        
-        //Base de % de cada AV
-        let baseAV1_AV2 = 25;
-        let baseAv3 = 30;
-        let baseAv4 = 20;
-
-        //Ponto minimo para aprovação por unidade [nota * base(%)]
-        let pontoMinAV1_AV2 = 175;
-        let pontoMinAV3 = 210;
-        let pontoMinAV4 = 140;
-        
-        //Ponto real
-        let pontoRealAV1 = 0;
-        let pontoRealAV2 = 0;
-        let pontoRealAV3 = 0;
-        let pontoRealAV4 = 0;
-
-        //Pontuação devendo da unidade
-        let sadoParaAV2 = 0;
-        let sadoParaAV3 = 0;
-        let sadoParaAV4 = 0;
-
-        //Previsão da proxima nota
-        let previsaoAV2 = 0;
-        let previsaoAV3 = 0;
-        let previsaoAV4 = 0;
-
-        if(av1 && !av2 && !av3 && !av4)
-        {
-            pontoRealAV1 = av1 * baseAV1_AV2;
-            console.log("pontoRealAV1: " + pontoRealAV1)
-            sadoParaAV2 = (pontoMinAV1_AV2 + 0) - pontoRealAV1;
-            console.log("sadoParaAV2: " + sadoParaAV2)
-            previsaoAV2 = (pontoMinAV1_AV2 + sadoParaAV2)/baseAV1_AV2;
-            console.log("previsaoAV2: " + previsaoAV2)
-
-            //previsaoAV2 = (pontoMinAV1_AV2 + sadoParaAV2)/baseAV1_AV2;
-            //previsaoAV2 = (pontoMinAV1_AV2 + sadoParaAV2)/baseAV1_AV2;
-            while(previsaoAV2 > 10){
-
-            }
-            previsaoAV3 = 7;
-            previsaoAV4 = 7;
+    private GetBaseCalc(opcPrev:number){
+        if(opcPrev == 1 || opcPrev == 2 ){//av2
+            return 25;
+        }else if(opcPrev == 3){//AV3
+            return 30;
+        }else if(opcPrev == 4){//AV4
+            return 20;
         }
-        console.log("AV1: " + av1);
-        console.log("AV2: " + previsaoAV2);
-        console.log("AV3: " + previsaoAV3);
-        console.log("AV4: " + previsaoAV4);
+        return 0;
+    }
 
+    private GetPontoMin(opcPrev:number){
+        if(opcPrev == 1 || opcPrev == 2 ){//av2
+            return 175;
+        }else if(opcPrev == 3){//AV3
+            return 210;
+        }else if(opcPrev == 4){//AV4
+            return 140;
+        }
+        return 0;
     }
 }
