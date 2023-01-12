@@ -1,0 +1,66 @@
+/*Caixa principal que engloba tudo*/
+.box-main{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+@media screen and (max-width: 768px){
+    .box-main{
+        padding-left: 1%;
+        padding-right: 1%;
+    }  
+}
+
+/*Div do formulário*/
+.form-box{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+/*Botão de calcular do formulário*/
+.button-box{
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%; 
+}
+
+/*Div de exibição dos resultados e informações*/
+.card-box{
+    width: 100%;
+}
+
+/*Div de exibição da nota*/
+.box-grade{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-grade h1{
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+}
+
+/*Div que contem as cores e o que elas significam*/
+.list-colors{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+.list-colors span{
+    padding-left: 2%;
+}
+
+/*Cubos com cores que indicam aprovado ou reprovado*/
+.cube-color{width: 20px; height: 20px;}
+.apr {background-color: #28a745;}
+.rep {background-color: #dc3545;}
+
+/*Tabela com as notas e suas participações na media*/
+.text-center{
+    text-align: center;
+}
+
+.text-p-justify{
+    text-align: justify;
+}

@@ -1,0 +1,53 @@
+<mat-card class="mainCard">
+    <mat-card-header class="headerCard">
+        <div mat-card-avatar class="numberCard" [style.color]="estudante.GetCorAG()" [style.border-color]="estudante.GetCorAG()">
+            <span><strong>{{estudante.CalcAproveitamentoGlobal()}}</strong></span>
+        </div>
+        <div>
+            <mat-card-title>Média do Semestre</mat-card-title>
+            <span [ngSwitch]="estudante.StatusEstudante()">
+                <strong *ngSwitchCase="0" [style.color]="estudante.GetCorAG()">Você foi reprovado</strong>
+                <strong *ngSwitchCase="1" [style.color]="estudante.GetCorAG()">Você foi Aprovado</strong>
+                <strong *ngSwitchCase="2" [style.color]="estudante.GetCorAG()">Você irá para a FINAL</strong>
+            </span>
+        </div>
+    </mat-card-header>
+    <mat-card-content class="bodyCard">
+        <p>
+            A média do semestre é calculada considerando pesos para cada avaliação 
+            (veja na tabela abaixo), é feito o somatório da notas multiplicando os
+            pesos, e dividindo o resultado total por 100.
+        </p>
+        <table class="table">
+            <thead>
+            <tr style="text-align: center;">
+                <th scope="col">Avaliação</th>
+                <th scope="col">Nota</th>
+                <th scope="col">Peso (%)</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                <td>AV1</td>
+                <td>{{estudante.av1}}</td>
+                <td>25%</td>
+                </tr>
+                <tr class="text-center">
+                <td>AV2</td>
+                <td>{{estudante.av2}}</td>
+                <td>25%</td>
+                </tr>
+                <tr class="text-center">
+                <td>AV3</td>
+                <td>{{estudante.av3}}</td>
+                <td>30%</td>
+                </tr>
+                <tr class="text-center">
+                <td>EDAG</td>
+                <td>{{estudante.av4}}</td>
+                <td>20%</td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-card-content>
+  </mat-card> 

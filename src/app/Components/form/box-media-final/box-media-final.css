@@ -1,0 +1,5 @@
+.numberCardColorFinal {
+    border-radius: 5px;
+    border: 4px solid var(--blue);
+    color:  var(--blue);
+}

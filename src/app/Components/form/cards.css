@@ -1,0 +1,49 @@
+/*Div principal do componente*/
+.mainCard {
+    max-width: 500px;
+}
+
+/*Cabeçalho*/
+.headerCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*Div do valor da media*/
+.numberCard {
+    width: 70px;
+    height: 70px;
+    border: 4px solid var(--blue);
+    color:  var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.numberCard span{
+    font-size: xx-large;
+    
+}
+
+/*Div do texto descritivo sobre as notas*/
+.bodyCard{
+    padding-top: 20px;
+}
+
+/*Paragrafo*/
+p{
+    text-align: justify;
+}
+
+/*Formula matematica*/
+.box-formula{
+    background-color: var(--grey);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}

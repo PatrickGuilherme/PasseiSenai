@@ -1,0 +1,27 @@
+.logo-previsao{
+    width: 100%;
+}
+
+.numberCardPrevisao {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tabelanotas{
+    background-color: var(--green);
+    border-radius: 5px;
+    padding: 5px; 
+    width: 50px;
+}
+
+.td_tabelanotas{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+}

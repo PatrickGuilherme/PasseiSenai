@@ -1,0 +1,97 @@
+<form class="box-form" [formGroup]="estudanteForm" (ngSubmit)="SubmitForm()">
+    <div class="box-form-fields">
+
+        <!--INPUT 1ª AVALIAÇÃO-->
+        <mat-form-field class="form-group form-input">
+            <mat-label>1ª Avaliação</mat-label>
+            <input 
+                formControlName="av1"
+                matInput 
+                type="text" 
+                placeholder="Valor de 0 a 10"
+                onpaste="return false" 
+                ondrop="return false"
+                autocomplete="off"
+                maxlength="3"
+                onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
+            <mat-error *ngIf="VerifyErros('av1')">
+                {{VerifyErros("av1")}}
+            </mat-error>
+        </mat-form-field>
+
+        <!--INPUT 2ª AVALIAÇÃO-->
+        <mat-form-field class="form-group form-input">
+            <mat-label>2ª Avaliação</mat-label>
+            <input 
+                formControlName="av2"
+                matInput 
+                type="text" 
+                placeholder="Valor de 0 a 10"
+                onpaste="return false" 
+                ondrop="return false"
+                autocomplete="off"
+                maxlength="3"
+                onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
+            <mat-error *ngIf="VerifyErros('av2')">
+                {{VerifyErros("av2")}}
+            </mat-error>
+        </mat-form-field>
+    
+        <!--INPUT 3ª AVALIAÇÃO-->
+        <mat-form-field class="form-group form-input">
+            <mat-label>3ª Avaliação</mat-label>
+            <input 
+                formControlName="av3"
+                matInput 
+                type="text" 
+                placeholder="Valor de 0 a 10"
+                onpaste="return false" 
+                ondrop="return false"
+                autocomplete="off"
+                maxlength="3"
+                onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
+            <mat-error *ngIf="VerifyErros('av3')">
+                {{VerifyErros("av3")}}
+            </mat-error>
+        </mat-form-field>
+    
+        <!--INPUT 4ª AVALIAÇÃO EDAG-->
+        <mat-form-field class="form-group form-input">
+            <mat-label>4ª Avaliação - EDAG</mat-label>
+            <input 
+                formControlName="edag"
+                matInput 
+                type="text" 
+                placeholder="Valor de 0 a 10"
+                onpaste="return false" 
+                ondrop="return false"
+                autocomplete="off"
+                maxlength="3"
+                onkeypress="{ return event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57) }">
+            <mat-error *ngIf="VerifyErros('edag')">
+                {{VerifyErros("edag")}}
+            </mat-error>
+        </mat-form-field>
+        
+        <button class="btn btn-primary btn-send-data" type="submit" [disabled]="estudanteForm.invalid">Calcular</button>
+    </div>
+</form>
+
+<div *ngIf="estudante" class="box-main">
+    <app-box-media 
+        [estudante]='estudante'>
+    </app-box-media>
+
+    <app-box-media-final 
+        [estudante]='estudante' 
+        *ngIf="estudante.StatusEstudante() == 2">
+    </app-box-media-final>    
+
+    <!-- <app-box-previsao
+        [estudante]='estudante'>
+    </app-box-previsao> -->
+</div>
+
+
+
+
