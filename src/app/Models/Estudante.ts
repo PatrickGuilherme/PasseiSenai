@@ -75,12 +75,9 @@ export class Estudante {
 
                 //Aproxima quando o numero decimal depois da virgular for quebrado
                 if(Number(avfString[1][1]) > 0 ){
-                    console.log("OPC 1.1 :" + avFinal.toFixed(1))
-                    console.log("OPC 1.2 :" + (parseFloat(avFinal.toFixed(1) )))
                     return  this.Arredondar(parseFloat(avFinal.toFixed(1)) + 0.1,2);
                 }
             }
-            console.log("OPC 2.1 :" + avFinal.toFixed(1))
             return  parseFloat(avFinal.toFixed(1));
         } 
         return -1;

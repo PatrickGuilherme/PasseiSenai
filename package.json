@@ -7,7 +7,7 @@
     "build": "ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy:ghdocs": "ng build --prod --base-href /PasseiSenai/ --output-path docs"
+    "deploy:ghdocs": "ng build --prod --base-href /PasseiSenai/ --deploy-url /PasseiSenai/ --output-path docs "
   },
   "engines": {
     "node": "16.13.1",
