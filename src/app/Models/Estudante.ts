@@ -42,15 +42,20 @@ export class Estudante {
         if(this.av1 >= 0 && this.av2 >= 0 && this.av3 >= 0 && this.av4 >= 0)
         {
             let resultado = ((this.av1 * 25) + (this.av2 * 25) + (this.av3 * 30) + (this.av4 * 20)) / 100 
-            return this.ArredondarAprovGlobal(resultado);
+            return this.Arredondar(resultado,1);
         }
         return -1;
     }
 
-    //Arredondar aproveitamento global
-    private ArredondarAprovGlobal(valor:number):number{
-        let aux = Math.pow(10,1)
-        let resultado = Math.floor(valor*aux)/aux;
+    //Arredondar para baixo aproveitamento global
+    private Arredondar(valor:number, operacao:number):number{
+        let aux = Math.pow(10,1);
+        let resultado;
+        if(operacao == 1){
+            resultado = Math.floor(valor*aux)/aux;
+        }else{
+            resultado = Math.ceil(valor*aux)/aux;
+        }
         return resultado;
     }
 
@@ -70,9 +75,12 @@ export class Estudante {
 
                 //Aproxima quando o numero decimal depois da virgular for quebrado
                 if(Number(avfString[1][1]) > 0 ){
-                    return  parseFloat(avFinal.toFixed(1)) + 0.1;
+                    console.log("OPC 1.1 :" + avFinal.toFixed(1))
+                    console.log("OPC 1.2 :" + (parseFloat(avFinal.toFixed(1) )))
+                    return  this.Arredondar(parseFloat(avFinal.toFixed(1)) + 0.1,2);
                 }
             }
+            console.log("OPC 2.1 :" + avFinal.toFixed(1))
             return  parseFloat(avFinal.toFixed(1));
         } 
         return -1;
