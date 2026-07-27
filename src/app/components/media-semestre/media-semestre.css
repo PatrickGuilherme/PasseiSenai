@@ -5,7 +5,6 @@
 
 .div-card {
   width: 100%;
-  /* Permite responsividade baseada no componente */
   container-type: inline-size;
 }
 
@@ -14,29 +13,24 @@
   min-height: 280px;
   margin: 16px 0;
   padding: 32px 24px;
-
   display: grid;
-  grid-template-columns:
-    minmax(130px, 0.8fr)
-    2px
-    minmax(0, 1.5fr);
-
   align-items: center;
   gap: 20px;
-
   background-color: var(--cor-status-terciaria);
   border-radius: 18px;
   box-shadow: 0 3px 8px rgba(15, 23, 42, 0.18);
-
   box-sizing: border-box;
   overflow: hidden;
+    grid-template-columns:
+    minmax(130px, 0.8fr)
+    2px
+    minmax(0, 1.5fr);
 }
 
 /* Nota */
 
 .card-nota {
   min-width: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +39,6 @@
 
 .nota-principal {
   color: var(--cor-status-principal);
-
   font-family: Arial, sans-serif;
   font-size: clamp(100px, 24cqw, 150px);
   font-weight: 700;
@@ -55,22 +48,18 @@
 
 .nota-completa {
   margin-top: 24px;
-
   color: var(--cor-status-principal);
   font-family: Arial, sans-serif;
   font-size: clamp(20px, 5cqw, 25px);
   font-weight: 700;
 }
 
-/* Divisor */
 
 .divisor {
   width: 2px;
   height: 180px;
   background-color: var(--cor-status-principal);
 }
-
-/* Resultado */
 
 .card-resultado {
   width: 100%;
@@ -79,7 +68,6 @@
 
 .card-resultado h2 {
   margin: 0 0 16px;
-
   color: #334155;
   font-family: Arial, sans-serif;
   font-size: clamp(25px, 6cqw, 35px);
@@ -91,27 +79,22 @@
   width: 100%;
   min-height: 50px;
   padding: 10px 18px;
-
   display: flex;
   align-items: center;
   gap: 10px;
-
   color: var(--cor-status-principal);
   background-color: var(--cor-status-secundaria);
   border-radius: 10px;
   box-shadow: 0 4px 7px rgba(15, 23, 42, 0.16);
-
   box-sizing: border-box;
 }
 
 .aviso-final strong {
   min-width: 0;
-
   font-family: Arial, sans-serif;
   font-size: clamp(17px, 4.2cqw, 20px);
   font-weight: 700;
   line-height: 1.2;
-
   white-space: normal;
   overflow-wrap: break-word;
 }
@@ -120,25 +103,22 @@
   width: 32px;
   height: 32px;
   flex: 0 0 32px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #ffffff;
   background-color: var(--cor-status-principal);
   border-radius: 50%;
-
   font-family: Arial, sans-serif;
   font-size: 21px;
   font-weight: 700;
 }
 
+
 /*
   Responsividade baseada na largura do componente,
   e não na largura da tela.
 */
-
 @container (max-width: 480px) {
   .card-media {
     padding: 28px 20px;
