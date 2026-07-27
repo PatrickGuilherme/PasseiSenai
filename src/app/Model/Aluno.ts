@@ -67,7 +67,6 @@ export class Aluno {
         
         if(denominador === 0) return -1;
         let resultado = numerador / denominador;
-        console.log("NPA DECIMAL: " + resultado)
         return  AlunoHelper.ArredondarNotas(resultado,1);
     }
 

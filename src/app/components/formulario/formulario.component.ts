@@ -65,7 +65,6 @@ export class FormularioComponent implements OnInit {
       notaAV3,
       notaEdag
     );
-    console.log(aluno);
     return aluno;
   }
 
@@ -73,12 +72,10 @@ export class FormularioComponent implements OnInit {
   public GetNPA() {
     this.Aluno = this.ExtrairEntrada(); 
     let valor = this.Aluno.DefinirNPA();
-    console.log("valor do NPA: " + valor);
 
     if(valor >= 10 || valor < 0)  this.Npa = ""
     else if(valor) this.Npa = "" + valor?.toString();
     else this.Npa = "";
-    console.log(this.Npa);
   }
 
   //Verificar se o formulario está valido
