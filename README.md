@@ -98,17 +98,14 @@ Para gerar os arquivos de produção:
 ng build
 ```
 
-Os arquivos compilados serão criados na pasta `dist/`.
+Os arquivos compilados serão criados na pasta `docs/`.
 
 ### Publicação no GitHub Pages
 
-Caso o repositório se chame `PasseiSenai`, utilize:
-
 ```bash
-ng build --base-href /PasseiSenai/
+ng build --base-href /PasseiSenai/ --deploy-url /PasseiSenai/
 ```
 
-Ao utilizar outro nome de repositório, substitua `/PasseiSenai/` pelo nome correspondente.
 
 ## 📁 Estrutura principal
 
@@ -125,16 +122,8 @@ src/
 │   │   └── calculadora.page/
 │   ├── helper/
 │   └── model/
-├── assets/
+├── public/
 └── index.html
-```
-
-## 📷 Demonstração
-
-Adicione nesta seção uma imagem ou GIF da aplicação:
-
-```markdown
-![Demonstração do Passei+](caminho-da-imagem.png)
 ```
 
 ## 📄 Licença
