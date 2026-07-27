@@ -1,0 +1,136 @@
+h3{
+  color: #2E3E4F;
+}
+
+.div-card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 600px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #00000036;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.div-titulo{
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.div-peso{
+  background-color: #E4EEFC;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.peso{
+  color: #036AF9;
+}
+
+.div-input{
+  max-width:  600px;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.div-npa {
+  max-width: 600px;
+  width: 100%;
+  min-height: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  box-sizing: border-box;
+  padding: 5px 5px;
+  background-color: #f3f6fc;
+  border-radius: 5px;
+}
+
+.npa-icone {
+  width: 25px;
+  height: 25px;
+  flex-shrink: 0;
+  color: #8c8c8c;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.npa-centro {
+  fill: currentColor;
+  stroke: none;
+}
+
+.npa-texto {
+  color: #7180a5;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.npa-texto strong {
+  margin-left: 5px;
+  color: #036af9;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.input-nota{
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #BED3F1;
+}
+
+.input-nota:focus {
+  border-color: #0877f9;
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(8 119 249 / 12%);
+}
+
+/* Chrome, Edge, Safari e Opera */
+.input-nota::-webkit-inner-spin-button,
+.input-nota::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+.input-nota[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.txt-erro{
+  color: rgb(249, 4, 4);
+}
+
+.input-nota.input-erro {
+  color: rgb(249, 4, 4);
+  border-color: rgb(249, 4, 4);
+}
+
+.input-nota.input-erro:focus {
+  border-color: rgb(249, 4, 4);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.2);
+}
+
+.input-nota.input-erro::placeholder {
+  color: rgb(249, 4, 4);
+}

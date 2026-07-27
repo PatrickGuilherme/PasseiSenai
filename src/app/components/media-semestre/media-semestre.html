@@ -1,0 +1,19 @@
+<article class="div-card">
+  <section class="card-media" [style.--cor-status-terciaria]="CorTerciaria">
+    <div class="card-nota">
+      <strong class="nota-principal" [style.--cor-status-principal]="CorPrincipal">{{MediaSemestreApr}}</strong>
+      <span class="nota-completa" [style.--cor-status-principal]="CorPrincipal">{{MediaSemestre}}</span>
+    </div>
+
+    <div class="divisor" [style.--cor-status-principal]="CorPrincipal"></div>
+
+    <div class="card-resultado">
+      <h2><strong>Média do Semestre</strong></h2>
+
+      <div class="aviso-final" [style.--cor-status-principal]="CorPrincipal" [style.--cor-status-secundaria]="CorSecundaria">
+        <span class="icone-aviso" [style.--cor-status-principal]="CorPrincipal">!</span>
+        <strong>{{Mensagem}}</strong>
+      </div>
+    </div>
+  </section>
+</article>

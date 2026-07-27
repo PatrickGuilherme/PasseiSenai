@@ -1,69 +1,59 @@
-<h1 align="center">Passei SENAI</h1><!--Nome curto e objetivo-->
-<h5 align="center">Status: Concluido </h5><!--Concluido, Em andamento ou Finalizado-->
+# PasseiMais
 
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.27.
 
-<h2>Sumário</h2>
-<!--Sumário que leva as sessões do readme-->
-<ul>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#requisitosmacro">Requisitos macro</a></li>
-    <li><a href="#demo">Demonstração da aplicação</a></li>
-    <li><a href="#prereq">Pré-requisitos e como rodar a aplicação</a></li>
-    <li><a href="#tec">Tecnologias utilizadas</a></li>
-    <li><a href="#autor">Responsáveis</a></li>
-</ul>
+## Development server
 
+To start a local development server, run:
 
-<h2 id="sobre">💻 Sobre</h2>
-<!--Descrição do contexto e produto do projeto - Consulte o documento F001-NDSI-Levantamento de Macro Requisitos-->
-<p align="justify">
-Uma aplicação de página única (SPA) que calcula a nota media do semestre de estudantes da graduação do SENAI CIMATEC e estipula a pontuação mínima necessária para aprovação caso o estudante for fazer a FINAL(avaliação caso o estudante não atinja a media do semestre). 
-</p>
+```bash
+ng serve
+```
 
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-<h2 id="requisitosmacro">📝 Requisitos macro</h2>
-<!--Lista de todos as funcionalidades do sistema (nível macro)-->
-<ul>
-    <li>Calcular média do semestre</li>
-    <li>Calcular pontuação necessária para aprovação</li>
-</ul>
+## Code scaffolding
 
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-<h2 id="demo">🎥 Demonstração da aplicação</h2>
-<!--Conjunto de prints da aplicação-->
-<h1 align="center">
-    <img title="Imagem 1" src="./src/assets/print1.png/"/>
-    <img title="Imagem 2" src="./src/assets/print2.png/"/>
-    <img title="Imagem 3" src="./src/assets/print3.png/"/>
-</h1>
+```bash
+ng generate component component-name
+```
 
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-<h2 id="prereq">📀 Pré-requisitos e como rodar a aplicação</h2>
-<!--Descrição do pré requisito de instalação na maquina em forma de passo a passo-->
-<ol>
-    <li>Instalar node 16.13.1</li>
-    <li>Instalar npm 8.1.2</li>
-    <li>Instalar angular CLI 13.0.3</li>
-    <li>Com tudo instalado clone o repositório na sua máquina</li>
-    <li>Abra a pasta do projeto no terminal e insirá <code>npm install</code>, instale a versão 8.1.2</li>
-    <li>Para executar a aplicação em modo de DEV insirá <code>ng serve</code></li>
-</ol>
+```bash
+ng generate --help
+```
 
+## Building
 
-<h2 id="tec">🔨Tecnologias utilizadas</h2>
-<!--Descrição das tecnologias utilizadas (linguagem, biblioteca, framework etc)-->
-<p>As seguintes ferramentas foram utilizadas na construção do projeto:</p>
-<ul>
-    <li>Angular CLI 13</li>
-    <li>HTML 5</li>
-    <li>CSS 3</li>
-    <li>Typescript</li>
-    <li>Angular Material</li>
-</ul>
+To build the project run:
 
+```bash
+ng build
+```
 
-<h2 id="autor">👦 Responsáveis</h2>
-<!--Listagem dos responsáveis pelo projeto-->
-<ul>
-   <li>Patrick Guilherme da Silva</li>
-<ul>
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

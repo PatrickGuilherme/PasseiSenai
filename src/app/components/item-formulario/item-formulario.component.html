@@ -1,0 +1,50 @@
+<article class="div-card">
+  <header class="div-titulo">
+    <h3>{{Titulo}}</h3>
+    <div class="div-peso">
+      <span class="peso"><strong>{{Peso}}</strong></span>
+    </div>
+
+    <div class="div-erro">
+      @if (MensagemErro; as erro) {
+        <span class="txt-erro">{{erro}}</span>
+      }
+    </div>
+  </header>
+
+  <div class="div-input">
+    <input
+      class="input-nota"
+      [class.input-erro]="ExibirErro()"
+      type="number"
+      min="0"
+      max="10"
+      step="0.1"
+      placeholder="Digite sua nota"
+      [formControl]="Controle"
+    />
+  </div>
+
+  <div class="div-npa">
+    <svg
+      class="npa-icone"
+      viewBox="0 0 48 48"
+      aria-hidden="true"
+    >
+      <circle cx="21" cy="27" r="17"></circle>
+      <circle cx="21" cy="27" r="9"></circle>
+      <circle class="npa-centro" cx="21" cy="27" r="3"></circle>
+
+      <path d="M21 27L37 11"></path>
+      <path d="M30 11H37V18"></path>
+      <path d="M37 11L42 6"></path>
+    </svg>
+
+    <span class="npa-texto">
+      NPA (nota para aprovação):
+      @if(!this.FormularioPreenchido()){
+        <strong>{{ Npa }}</strong>
+      }
+    </span>
+  </div>
+</article>

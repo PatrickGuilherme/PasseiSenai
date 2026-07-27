@@ -1,0 +1,11 @@
+<section class="div-formulario">
+    <form class="form" [formGroup]="formulario" (ngSubmit)="Calcular()">
+        <item-formulario [Titulo] ="'Avaliação 1'" [Peso]="'25%'" [Npa]="Npa" [Controle]="formulario.controls.av1"/>
+        <item-formulario [Titulo] ="'Avaliação 2'" [Peso]="'25%'" [Npa]="Npa" [Controle]="formulario.controls.av2"/>
+        <item-formulario [Titulo] ="'Avaliação 3'" [Peso]="'30%'" [Npa]="Npa" [Controle]="formulario.controls.av3"/>
+        <item-formulario [Titulo] ="'EDAG'"        [Peso]="'20%'" [Npa]="Npa" [Controle]="formulario.controls.edag"/>
+
+        <button class="botao-calcular" type="submit" [disabled]="!FormularioValido()">Calcular</button>
+    </form>
+</section>
+
