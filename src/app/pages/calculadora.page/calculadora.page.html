@@ -1,0 +1,16 @@
+<header-component/>
+<formulario-component  (AlunoEvento)="GetAlunoEvento($event)"/>
+@if(Aluno){
+    <section class="div-card-media">
+        <div class="div-media">
+            <media-semestre [aluno] = "Aluno"/>
+        </div>
+    </section>
+    @if(Aluno.DefinirStatusAprovacao() === 2){
+        <section class="div-card-media">
+            <div class="div-media">
+                <avaliacao-final [aluno] = "Aluno"/>
+            </div>
+        </section>
+    }
+}
