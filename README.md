@@ -1,59 +1,146 @@
-# PasseiMais
+# 🎓 Passei+
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.27.
+Aplicação web desenvolvida em **Angular** para calcular a média semestral de estudantes de forma rápida, simples e intuitiva.
 
-## Development server
+O sistema utiliza as notas da **AV1**, **AV2**, **AV3** e **EDAG**, considerando o peso de cada avaliação, e apresenta a média final e a situação do estudante.
 
-To start a local development server, run:
+## 📌 Sobre o projeto
+
+O **Passei+** foi criado para facilitar o cálculo da média do semestre e ajudar o estudante a acompanhar seu desempenho acadêmico.
+
+A aplicação possui uma interface responsiva, valida os valores informados e exibe o resultado com uma nota aproximada, uma nota detalhada e uma mensagem de status.
+
+## ✨ Funcionalidades
+
+- Inserção das notas de cada avaliação;
+- Validação de notas entre **0 e 10**;
+- Cálculo automático da média ponderada;
+- Exibição da média aproximada;
+- Exibição da média com casas decimais;
+- Identificação da situação do estudante;
+- Cálculo de notas necessárias para aprovação direta em cada avaliação
+- Cálculo de nota necessária na avaliação final
+- Interface responsiva para computadores e dispositivos móveis;
+- Atualização dinâmica das informações exibidas.
+
+## 🧮 Cálculo da média
+
+A média semestral é calculada utilizando os seguintes pesos:
+
+| Avaliação | Peso |
+|---|---:|
+| AV1 | 25% |
+| AV2 | 25% |
+| AV3 | 30% |
+| EDAG | 20% |
+
+A fórmula utilizada é:
+
+```text
+Média = (AV1 × 0,25) + (AV2 × 0,25) + (AV3 × 0,30) + (EDAG × 0,20)
+```
+
+## 🛠️ Tecnologias utilizadas
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Reactive Forms
+
+## 🚀 Como executar o projeto
+
+### Pré-requisitos
+
+Antes de começar, tenha instalado:
+
+- Node.js
+- npm
+- Angular CLI
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git clone URL_DO_REPOSITORIO
+```
+
+Entre na pasta do projeto:
+
+```bash
+cd PasseiSenai
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Acesse no navegador:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```text
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📦 Gerar versão de produção
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Para gerar os arquivos de produção:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os arquivos compilados serão criados na pasta `dist/`.
 
-## Running unit tests
+### Publicação no GitHub Pages
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Caso o repositório se chame `PasseiSenai`, utilize:
 
 ```bash
-ng e2e
+ng build --base-href /PasseiSenai/
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Ao utilizar outro nome de repositório, substitua `/PasseiSenai/` pelo nome correspondente.
 
-## Additional Resources
+## 📁 Estrutura principal
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```text
+src/
+├── app/
+│   ├── components/
+│   │   ├── formulario/
+│   │   ├── item-formulario/
+│   │   ├── media-semestre/
+│   │   ├── header/
+│   │   └── footer/
+│   ├── pages/
+│   │   └── calculadora.page/
+│   ├── helper/
+│   └── model/
+├── assets/
+└── index.html
+```
+
+## 📷 Demonstração
+
+Adicione nesta seção uma imagem ou GIF da aplicação:
+
+```markdown
+![Demonstração do Passei+](caminho-da-imagem.png)
+```
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins de estudo e aprendizado.
+
+---
+
+Desenvolvido com dedicação para tornar o cálculo de notas mais simples. 🎓
