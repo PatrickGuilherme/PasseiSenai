@@ -65,7 +65,7 @@ export class MediaSemestre implements OnChanges {
     }  
     else if(statusAluno == 2)
     {
-      this.Mensagem = "Você está na FINAL";
+      this.Mensagem = "Recuperação";
     }
     else if(statusAluno == 3)
     { 
