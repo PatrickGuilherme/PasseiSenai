@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-
+  public imagem = 'logo_icone_nome_colorida.png';
 }
