@@ -47,7 +47,7 @@
   color: var(--cor-status-principal);
 
   font-family: Arial, sans-serif;
-  font-size: clamp(100px, 24cqw, 100px);
+  font-size: clamp(100px, 24cqw, 150px);
   font-weight: 700;
   line-height: 0.85;
   letter-spacing: -8px;
@@ -82,7 +82,7 @@
 
   color: #334155;
   font-family: Arial, sans-serif;
-  font-size: clamp(25px, 6cqw, 25px);
+  font-size: clamp(25px, 6cqw, 35px);
   font-weight: 400;
   line-height: 1.15;
 }
@@ -150,7 +150,7 @@
   }
 
   .nota-principal {
-    font-size: 130px;
+    font-size: 150px;
   }
 
   .nota-completa {
@@ -164,7 +164,7 @@
   }
 
   .card-resultado h2 {
-    font-size: 25px;
+    font-size: 35px;
   }
 
   .aviso-final {
