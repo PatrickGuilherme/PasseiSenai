@@ -98,7 +98,7 @@
 
   color: var(--cor-status-principal);
   background-color: var(--cor-status-secundaria);
-  border-radius: 40px;
+  border-radius: 10px;
   box-shadow: 0 4px 7px rgba(15, 23, 42, 0.16);
 
   box-sizing: border-box;
@@ -171,7 +171,6 @@
     width: fit-content;
     max-width: 100%;
     margin: 0 auto;
-
     justify-content: center;
   }
 
